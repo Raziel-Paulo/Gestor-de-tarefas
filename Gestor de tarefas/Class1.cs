@@ -9,7 +9,7 @@ namespace Gestor_de_tarefas
 
         public class Tarefa
         {
-            public int Numt {  get; set; }
+            public string Ttarefa {  get; set; }
             public DateTime Prazo { get; set; }
             public string Prioridade { get; set; }
             public string Tarefa1 {  get; set; }

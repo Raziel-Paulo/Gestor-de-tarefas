@@ -33,12 +33,15 @@ namespace Gestor_de_tarefas
             {
                 MessageBox.Show("Falta preencher o que é a tarefa");
             }
-
-            if (comboBox1.SelectedIndex != -1 && tarefa.Text != "")
+            if (titulot.Text == "")
+            {
+                MessageBox.Show("Falta preencher o que é a titulo da tarefa");
+            }
+            if (comboBox1.SelectedIndex != -1 && tarefa.Text != "" && titulot.Text != "")
             {
                 var novaTarefa = new Tarefa
                 {
-                    Numt = _lista.Count + 1,
+                    Ttarefa = titulot.Text,
                     Prazo = Convert.ToDateTime(prazo.Text),
                     Tarefa1 = tarefa.Text,
                 };
@@ -68,5 +71,7 @@ namespace Gestor_de_tarefas
         {
             comboBox1.SelectedIndex = 0;
         }
+
+
     }
 }

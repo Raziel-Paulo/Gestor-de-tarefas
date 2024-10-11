@@ -15,45 +15,53 @@ namespace Gestor_de_tarefas
     public partial class RemoverLista : Form
     {
         List<Tarefa> _listadoremover = new List<Tarefa>();
-        public RemoverLista()
-        {
-            InitializeComponent();
-        }
         public void LoadData(List<Tarefa> _tarefa1)
         {
             _listadoremover = _tarefa1;
-            
+
+        }
+        public RemoverLista()
+        {
+            InitializeComponent();
         }
         private void RemoverLista_Load(object sender, EventArgs e)
         {
   
             foreach (var numerot in _listadoremover)
             {
-                comboBox1.Items.Add(numerot.Numt);
+                comboBox1.Items.Add(numerot.Ttarefa);
             }
             foreach (var tarefa in _listadoremover)
             {
-                this.listat.Rows.Add(tarefa.Numt, tarefa.Prazo, tarefa.Prioridade, tarefa.Tarefa1);
+                this.listat.Rows.Add(tarefa.Ttarefa, tarefa.Prazo, tarefa.Prioridade, tarefa.Tarefa1);
             }
         }
 
         private void removert_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 0)
+       if (comboBox1.SelectedIndex == 0)
+        {
+            Tarefa numeroParaRemover = null;
+            bool encrontrado = false;
+            foreach (var numero in _listadoremover)
             {
-                foreach (var numero in _listadoremover)
+                if (comboBox1.Text  == numero.Ttarefa)
                 {
-                    if(comboBox1.SelectedIndex == numero.Numt )
-                    {
-                        _listadoremover.Remove(numero);
-                        break;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Falta selecionar o número da tarefa que quer remover");
-                    }
+                numeroParaRemover = numero;
+                encrontrado = true;
+                break;
+}
+                }
+                if (encrontrado = true)
+                {
+                _listadoremover.Remove(numeroParaRemover);
                 }
             }
+        else
+        {
+        MessageBox.Show("Falta selecionar o número da tarefa que quer remover");
+        }
+            
         }
     }
 }
