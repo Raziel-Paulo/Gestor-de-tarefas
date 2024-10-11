@@ -126,6 +126,7 @@
             Controls.Add(tarefa);
             Name = "AdicionarT";
             Text = "AdicionarT";
+            Load += AdicionarT_Load;
             ResumeLayout(false);
             PerformLayout();
         }

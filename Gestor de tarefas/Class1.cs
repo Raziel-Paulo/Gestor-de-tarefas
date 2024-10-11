@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace Gestor_de_tarefas
 {
-    public class add
-    {
+
         public class Tarefa
         {
             public int Numt {  get; set; }
             public DateTime Prazo { get; set; }
             public string Prioridade { get; set; }
             public string Tarefa1 {  get; set; }
-
-        }
     }
 }

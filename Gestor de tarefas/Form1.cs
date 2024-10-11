@@ -1,11 +1,11 @@
-using static Gestor_de_tarefas.add;
+using static Gestor_de_tarefas.Tarefa;
 
 namespace Gestor_de_tarefas
 {
     public partial class Form1 : Form
     {
 
-        List<add.Tarefa> _tarefa1 = new List<add.Tarefa>();
+        List<Tarefa> _tarefa1 = new List<Tarefa>();
         int numtarefa1;
         public Form1()
         {
@@ -14,6 +14,7 @@ namespace Gestor_de_tarefas
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
         }
         private void Abrir_Click(object sender, EventArgs e)
         {

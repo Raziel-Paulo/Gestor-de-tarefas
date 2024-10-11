@@ -13,8 +13,8 @@ namespace Gestor_de_tarefas
 {
     public partial class AdicionarT : Form
     {
-        List<add.Tarefa> _lista = new List<add.Tarefa>();
-        public void LoadData(List<add.Tarefa> _tarefa1)
+        List<Tarefa> _lista = new List<Tarefa>();
+        public void LoadData(List<Tarefa> _tarefa1)
         {
             _lista = _tarefa1;
         }
@@ -25,20 +25,20 @@ namespace Gestor_de_tarefas
 
         private void AddT_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex== -1)
+            if (comboBox1.SelectedIndex == -1)
             {
                 MessageBox.Show("Falta preencher o grau da prioridade");
             }
-            if (tarefa.Text== "")
+            if (tarefa.Text == "")
             {
                 MessageBox.Show("Falta preencher o que é a tarefa");
             }
-            
-            if(comboBox1.SelectedIndex != -1 && tarefa.Text != "")
+
+            if (comboBox1.SelectedIndex != -1 && tarefa.Text != "")
             {
-                var novaTarefa = new add.Tarefa
+                var novaTarefa = new Tarefa
                 {
-                    Numt = _lista.Count +1,
+                    Numt = _lista.Count + 1,
                     Prazo = Convert.ToDateTime(prazo.Text),
                     Tarefa1 = tarefa.Text,
                 };
@@ -62,6 +62,11 @@ namespace Gestor_de_tarefas
         private void Fechar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void AdicionarT_Load(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = 0;
         }
     }
 }

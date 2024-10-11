@@ -8,23 +8,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Gestor_de_tarefas.add;
+using static Gestor_de_tarefas.Tarefa;
 
 namespace Gestor_de_tarefas
 {
     public partial class RemoverLista : Form
     {
-        List<add.Tarefa> _listadoremover = new List<add.Tarefa>();
+        List<Tarefa> _listadoremover = new List<Tarefa>();
         public RemoverLista()
         {
             InitializeComponent();
         }
-        public void LoadData(List<add.Tarefa> _tarefa1)
+        public void LoadData(List<Tarefa> _tarefa1)
         {
             _listadoremover = _tarefa1;
+            
         }
         private void RemoverLista_Load(object sender, EventArgs e)
         {
+  
             foreach (var numerot in _listadoremover)
             {
                 comboBox1.Items.Add(numerot.Numt);
@@ -39,9 +41,9 @@ namespace Gestor_de_tarefas
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                foreach (var numero in _listadoremover.ToList())
+                foreach (var numero in _listadoremover)
                 {
-                    if(comboBox1.SelectedIndex == numero.Numt)
+                    if(comboBox1.SelectedIndex == numero.Numt )
                     {
                         _listadoremover.Remove(numero);
                         break;
