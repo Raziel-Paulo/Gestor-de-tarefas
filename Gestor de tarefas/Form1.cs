@@ -11,7 +11,6 @@ namespace Gestor_de_tarefas
         {
             InitializeComponent();
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -36,9 +35,16 @@ namespace Gestor_de_tarefas
 
         private void removert_Click(object sender, EventArgs e)
         {
-            var RemoverLista = new RemoverLista();
-            RemoverLista.LoadData(_tarefa1);
-            RemoverLista.ShowDialog(this);
+            if(_tarefa1.Count == null)
+            {
+                MessageBox.Show("Não tens tarefas para remover");
+            }
+            else
+            {
+                var RemoverLista = new RemoverLista();
+                RemoverLista.LoadData(_tarefa1);
+                RemoverLista.ShowDialog(this);
+            }
         }
     }
 }

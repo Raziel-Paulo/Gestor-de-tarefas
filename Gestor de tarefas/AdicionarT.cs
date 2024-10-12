@@ -37,7 +37,20 @@ namespace Gestor_de_tarefas
             {
                 MessageBox.Show("Falta preencher o que é a titulo da tarefa");
             }
-            if (comboBox1.SelectedIndex != -1 && tarefa.Text != "" && titulot.Text != "")
+            bool tarefaigual = false;
+            foreach (var ttarefa in _lista)
+            {
+                if (ttarefa.Ttarefa == titulot.Text)
+                {
+                    tarefaigual=true;
+                    break;
+                }
+            }
+            if (tarefaigual == true) 
+            {
+                MessageBox.Show("Tens um titulo ja com esse nome");
+            }
+            if (comboBox1.SelectedIndex != -1 && tarefa.Text != "" && titulot.Text != "" && tarefaigual== false)
             {
                 var novaTarefa = new Tarefa
                 {

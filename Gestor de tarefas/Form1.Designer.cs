@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             listat = new DataGridView();
+            Abrir = new Button();
+            atualizar = new Button();
+            removert = new Button();
             Column3 = new DataGridViewTextBoxColumn();
             Prazo = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
-            Abrir = new Button();
-            atualizar = new Button();
-            removert = new Button();
             ((System.ComponentModel.ISupportInitialize)listat).BeginInit();
             SuspendLayout();
             // 
@@ -47,26 +47,6 @@
             listat.Name = "listat";
             listat.Size = new Size(444, 150);
             listat.TabIndex = 0;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Número da Tarefa";
-            Column3.Name = "Column3";
-            // 
-            // Prazo
-            // 
-            Prazo.HeaderText = "Prazo";
-            Prazo.Name = "Prazo";
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Prioridade";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Tarefa";
-            Column2.Name = "Column2";
             // 
             // Abrir
             // 
@@ -98,6 +78,26 @@
             removert.UseVisualStyleBackColor = true;
             removert.Click += removert_Click;
             // 
+            // Column3
+            // 
+            Column3.HeaderText = "Titulo da Tarefa";
+            Column3.Name = "Column3";
+            // 
+            // Prazo
+            // 
+            Prazo.HeaderText = "Prazo";
+            Prazo.Name = "Prazo";
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Prioridade";
+            Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Tarefa";
+            Column2.Name = "Column2";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -119,10 +119,10 @@
         private DataGridView listat;
         private Button Abrir;
         private Button atualizar;
+        private Button removert;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Prazo;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
-        private Button removert;
     }
 }

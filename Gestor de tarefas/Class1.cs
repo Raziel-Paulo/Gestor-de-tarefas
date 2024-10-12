@@ -13,5 +13,5 @@ namespace Gestor_de_tarefas
             public DateTime Prazo { get; set; }
             public string Prioridade { get; set; }
             public string Tarefa1 {  get; set; }
-    }
+        }
 }

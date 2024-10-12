@@ -39,7 +39,7 @@ namespace Gestor_de_tarefas
 
         private void removert_Click(object sender, EventArgs e)
         {
-       if (comboBox1.SelectedIndex == 0)
+       if (comboBox1.SelectedIndex >= 0)
         {
             Tarefa numeroParaRemover = null;
             bool encrontrado = false;
@@ -55,6 +55,16 @@ namespace Gestor_de_tarefas
                 if (encrontrado = true)
                 {
                 _listadoremover.Remove(numeroParaRemover);
+                }
+                this.listat.Rows.Clear();
+                comboBox1.Items.Clear();
+                foreach (var numerot in _listadoremover)
+                {
+                    comboBox1.Items.Add(numerot.Ttarefa);
+                }
+                foreach (var tarefa in _listadoremover)
+                {
+                    this.listat.Rows.Add(tarefa.Ttarefa, tarefa.Prazo, tarefa.Prioridade, tarefa.Tarefa1);
                 }
             }
         else
