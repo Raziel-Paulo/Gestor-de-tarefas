@@ -35,7 +35,7 @@ namespace Gestor_de_tarefas
 
         private void removert_Click(object sender, EventArgs e)
         {
-            if(_tarefa1.Count == null)
+            if(_tarefa1.Count == 0)
             {
                 MessageBox.Show("Não tens tarefas para remover");
             }

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             listat = new DataGridView();
-            Abrir = new Button();
-            atualizar = new Button();
-            removert = new Button();
             Column3 = new DataGridViewTextBoxColumn();
             Prazo = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
+            Abrir = new Button();
+            atualizar = new Button();
+            removert = new Button();
             ((System.ComponentModel.ISupportInitialize)listat).BeginInit();
             SuspendLayout();
             // 
@@ -47,36 +47,6 @@
             listat.Name = "listat";
             listat.Size = new Size(444, 150);
             listat.TabIndex = 0;
-            // 
-            // Abrir
-            // 
-            Abrir.Location = new Point(386, 107);
-            Abrir.Name = "Abrir";
-            Abrir.Size = new Size(112, 55);
-            Abrir.TabIndex = 1;
-            Abrir.Text = "Add Tarefa";
-            Abrir.UseVisualStyleBackColor = true;
-            Abrir.Click += Abrir_Click;
-            // 
-            // atualizar
-            // 
-            atualizar.Location = new Point(386, 174);
-            atualizar.Name = "atualizar";
-            atualizar.Size = new Size(112, 55);
-            atualizar.TabIndex = 2;
-            atualizar.Text = "Atualizar Tabela";
-            atualizar.UseVisualStyleBackColor = true;
-            atualizar.Click += atualizar_Click;
-            // 
-            // removert
-            // 
-            removert.Location = new Point(211, 137);
-            removert.Name = "removert";
-            removert.Size = new Size(112, 55);
-            removert.TabIndex = 3;
-            removert.Text = "Remover Tarefas";
-            removert.UseVisualStyleBackColor = true;
-            removert.Click += removert_Click;
             // 
             // Column3
             // 
@@ -97,6 +67,36 @@
             // 
             Column2.HeaderText = "Tarefa";
             Column2.Name = "Column2";
+            // 
+            // Abrir
+            // 
+            Abrir.Location = new Point(386, 88);
+            Abrir.Name = "Abrir";
+            Abrir.Size = new Size(112, 55);
+            Abrir.TabIndex = 1;
+            Abrir.Text = "Add Tarefa";
+            Abrir.UseVisualStyleBackColor = true;
+            Abrir.Click += Abrir_Click;
+            // 
+            // atualizar
+            // 
+            atualizar.Location = new Point(386, 174);
+            atualizar.Name = "atualizar";
+            atualizar.Size = new Size(112, 55);
+            atualizar.TabIndex = 2;
+            atualizar.Text = "Atualizar Tabela";
+            atualizar.UseVisualStyleBackColor = true;
+            atualizar.Click += atualizar_Click;
+            // 
+            // removert
+            // 
+            removert.Location = new Point(191, 128);
+            removert.Name = "removert";
+            removert.Size = new Size(112, 55);
+            removert.TabIndex = 3;
+            removert.Text = "Remover Tarefas";
+            removert.UseVisualStyleBackColor = true;
+            removert.Click += removert_Click;
             // 
             // Form1
             // 
