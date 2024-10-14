@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             listat = new DataGridView();
+            Column3 = new DataGridViewTextBoxColumn();
+            Prazo = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
             label1 = new Label();
             comboBox1 = new ComboBox();
             removert = new Button();
             removertudo = new Button();
             cancelar = new Button();
-            Column3 = new DataGridViewTextBoxColumn();
-            Prazo = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)listat).BeginInit();
             SuspendLayout();
             // 
@@ -49,6 +49,26 @@
             listat.Name = "listat";
             listat.Size = new Size(444, 178);
             listat.TabIndex = 1;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Titulo da Tarefa";
+            Column3.Name = "Column3";
+            // 
+            // Prazo
+            // 
+            Prazo.HeaderText = "Prazo";
+            Prazo.Name = "Prazo";
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Prioridade";
+            Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Tarefa";
+            Column2.Name = "Column2";
             // 
             // label1
             // 
@@ -67,6 +87,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(131, 23);
             comboBox1.TabIndex = 3;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // removert
             // 
@@ -97,26 +118,6 @@
             cancelar.Text = "Cancelar";
             cancelar.UseVisualStyleBackColor = true;
             cancelar.Click += cancelar_Click;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Titulo da Tarefa";
-            Column3.Name = "Column3";
-            // 
-            // Prazo
-            // 
-            Prazo.HeaderText = "Prazo";
-            Prazo.Name = "Prazo";
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Prioridade";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Tarefa";
-            Column2.Name = "Column2";
             // 
             // RemoverLista
             // 

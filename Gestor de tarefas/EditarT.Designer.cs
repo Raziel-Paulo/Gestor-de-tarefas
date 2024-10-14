@@ -43,6 +43,8 @@
             label1 = new Label();
             tarefa = new TextBox();
             editar = new Button();
+            Fechar = new Button();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)listat).BeginInit();
             SuspendLayout();
             // 
@@ -50,9 +52,9 @@
             // 
             listat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             listat.Columns.AddRange(new DataGridViewColumn[] { Column3, Prazo, Column1, Column2 });
-            listat.Location = new Point(347, 12);
+            listat.Location = new Point(274, 8);
             listat.Name = "listat";
-            listat.Size = new Size(444, 150);
+            listat.Size = new Size(444, 254);
             listat.TabIndex = 1;
             // 
             // Column3
@@ -78,15 +80,15 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 32);
+            comboBox1.Location = new Point(12, 36);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(163, 23);
+            comboBox1.Size = new Size(245, 23);
             comboBox1.TabIndex = 2;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // titulot
             // 
-            titulot.Location = new Point(12, 108);
+            titulot.Location = new Point(12, 139);
             titulot.Name = "titulot";
             titulot.Size = new Size(212, 23);
             titulot.TabIndex = 17;
@@ -95,7 +97,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(12, 80);
+            label4.Location = new Point(12, 111);
             label4.Name = "label4";
             label4.Size = new Size(132, 25);
             label4.TabIndex = 16;
@@ -105,7 +107,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(12, 188);
+            label3.Location = new Point(12, 219);
             label3.Name = "label3";
             label3.Size = new Size(82, 21);
             label3.TabIndex = 15;
@@ -113,7 +115,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(12, 162);
+            dateTimePicker1.Location = new Point(12, 193);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(200, 23);
             dateTimePicker1.TabIndex = 14;
@@ -122,7 +124,7 @@
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "Baixo", "Médio", "Alto" });
-            comboBox2.Location = new Point(12, 212);
+            comboBox2.Location = new Point(12, 243);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(121, 23);
             comboBox2.TabIndex = 13;
@@ -131,7 +133,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 134);
+            label2.Location = new Point(12, 165);
             label2.Name = "label2";
             label2.Size = new Size(98, 25);
             label2.TabIndex = 12;
@@ -141,7 +143,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(12, 238);
+            label1.Location = new Point(12, 269);
             label1.Name = "label1";
             label1.Size = new Size(58, 25);
             label1.TabIndex = 11;
@@ -149,14 +151,14 @@
             // 
             // tarefa
             // 
-            tarefa.Location = new Point(12, 266);
+            tarefa.Location = new Point(12, 297);
             tarefa.Name = "tarefa";
             tarefa.Size = new Size(212, 23);
             tarefa.TabIndex = 10;
             // 
             // editar
             // 
-            editar.Location = new Point(526, 243);
+            editar.Location = new Point(505, 275);
             editar.Name = "editar";
             editar.Size = new Size(110, 46);
             editar.TabIndex = 18;
@@ -164,11 +166,33 @@
             editar.UseVisualStyleBackColor = true;
             editar.Click += editar_Click;
             // 
+            // Fechar
+            // 
+            Fechar.Location = new Point(621, 277);
+            Fechar.Name = "Fechar";
+            Fechar.Size = new Size(97, 43);
+            Fechar.TabIndex = 19;
+            Fechar.Text = "Cancelar";
+            Fechar.UseVisualStyleBackColor = true;
+            Fechar.Click += Fechar_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(12, 8);
+            label5.Name = "label5";
+            label5.Size = new Size(245, 25);
+            label5.TabIndex = 20;
+            label5.Text = "Seleciona o que queres editar";
+            // 
             // EditarT
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(793, 301);
+            ClientSize = new Size(728, 330);
+            Controls.Add(label5);
+            Controls.Add(Fechar);
             Controls.Add(editar);
             Controls.Add(titulot);
             Controls.Add(label4);
@@ -205,5 +229,7 @@
         private Label label1;
         private TextBox tarefa;
         private Button editar;
+        private Button Fechar;
+        private Label label5;
     }
 }

@@ -6,7 +6,6 @@ namespace Gestor_de_tarefas
     {
 
         List<Tarefa> _tarefa1 = new List<Tarefa>();
-        int numtarefa1;
         public Form1()
         {
             InitializeComponent();

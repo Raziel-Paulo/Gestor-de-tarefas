@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,7 @@ namespace Gestor_de_tarefas
             }
             foreach (var tarefa in _EditarT)
             {
-                this.listat.Rows.Add(tarefa.Tarefa1, tarefa.Prazo, tarefa.Prioridade, tarefa.Tarefa1);
+                this.listat.Rows.Add(tarefa.Ttarefa, tarefa.Prazo, tarefa.Prioridade, tarefa.Tarefa1);
             }
         }
 
@@ -41,15 +42,104 @@ namespace Gestor_de_tarefas
                 {
                     titulot.Text = tarefas.Tarefa1;
                     dateTimePicker1.Value = Convert.ToDateTime(tarefas.Prazo);
-                    comboBox2.Text = tarefas.Prioridade;
                     tarefa.Text = tarefas.Tarefa1;
+                    if (tarefas.Prioridade == " (Baixa)")
+                    {
+                        comboBox2.SelectedIndex = 0;
+                    }
+                    else if (tarefas.Prioridade == " (Média)")
+                    {
+                        comboBox2.SelectedIndex = 1;
+                    }
+                    else if (tarefas.Prioridade == " (Alta)")
+                    {
+                        comboBox2.SelectedIndex = 2;
+                    }
                 }
             }
         }
 
         private void editar_Click(object sender, EventArgs e)
         {
+            if(comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Não inseriste o que querias editar");
+            }
+            if (comboBox2.SelectedIndex == -1)
+            {
+                MessageBox.Show("Falta preencher o grau da prioridade");
+            }
+            if (tarefa.Text == "")
+            {
+                MessageBox.Show("Falta preencher o que é a tarefa");
+            }
+            if (titulot.Text == "")
+            {
+                MessageBox.Show("Falta preencher o que é a titulo da tarefa");
+            }
+            bool tarefaigual = false;
+            if (comboBox2.SelectedIndex != -1 && tarefa.Text != "" && titulot.Text != "" && comboBox1.SelectedIndex != -1)
+            {
+                var novaTarefa = new Tarefa
+                {
+                    Ttarefa = titulot.Text,
+                    Prazo = Convert.ToDateTime(dateTimePicker1.Text),
+                    Tarefa1 = tarefa.Text,
+                };
+                if (comboBox2.SelectedIndex == 0)
+                {
+                    novaTarefa.Prioridade += " (Baixa)";
+                }
+                else if (comboBox2.SelectedIndex == 1)
+                {
+                    novaTarefa.Prioridade += " (Média)";
+                }
+                else if (comboBox2.SelectedIndex == 2)
+                {
+                    novaTarefa.Prioridade += " (Alta)";
+                }
+                if (comboBox1.SelectedIndex >= 0)
+                {
+                    Tarefa numeroParaRemover = null;
+                    bool encrontrado = false;
+                    foreach (var numero in _EditarT)
+                    {
+                        if (comboBox1.Text == numero.Ttarefa)
+                        {
+                            numeroParaRemover = numero;
+                            encrontrado = true;
+                            break;
+                        }
+                    }
+                    if (encrontrado = true)
+                    {
+                        _EditarT.Remove(numeroParaRemover);
+                    }
+                }
+                tarefaigual = false;
+                foreach (var ttarefa in _EditarT)
+                {
+                    if (ttarefa.Ttarefa == titulot.Text)
+                    {
+                        tarefaigual = true;
+                        break;
+                    }
+                }
+                if (tarefaigual == false)
+                {
+                    _EditarT.Add(novaTarefa);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Estas a tentar editar o tiltulo que ja tens igual na tabela");
+                }
+            }
+        }
 
+        private void Fechar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
