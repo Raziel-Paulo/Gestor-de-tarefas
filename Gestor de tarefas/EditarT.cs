@@ -65,7 +65,7 @@ namespace Gestor_de_tarefas
                 // Preenche os campos de edição com os detalhes da tarefa selecionada
                 if (comboBox1.Text == tarefas.Ttarefa)
                 {
-                    titulot.Text = tarefas.Tarefa1;
+                    titulot.Text = tarefas.Ttarefa;
                     dateTimePicker1.Value = Convert.ToDateTime(tarefas.Prazo);
                     tarefa.Text = tarefas.Tarefa1;
                     if (tarefas.Prioridade == " (Baixa)")
