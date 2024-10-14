@@ -36,6 +36,7 @@
             Abrir = new Button();
             atualizar = new Button();
             removert = new Button();
+            EditarT = new Button();
             ((System.ComponentModel.ISupportInitialize)listat).BeginInit();
             SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             // 
             listat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             listat.Columns.AddRange(new DataGridViewColumn[] { Column3, Prazo, Column1, Column2 });
-            listat.Location = new Point(54, 252);
+            listat.Location = new Point(10, 172);
             listat.Name = "listat";
             listat.Size = new Size(444, 150);
             listat.TabIndex = 0;
@@ -70,9 +71,9 @@
             // 
             // Abrir
             // 
-            Abrir.Location = new Point(386, 88);
+            Abrir.Location = new Point(10, 12);
             Abrir.Name = "Abrir";
-            Abrir.Size = new Size(112, 55);
+            Abrir.Size = new Size(110, 46);
             Abrir.TabIndex = 1;
             Abrir.Text = "Add Tarefa";
             Abrir.UseVisualStyleBackColor = true;
@@ -80,9 +81,9 @@
             // 
             // atualizar
             // 
-            atualizar.Location = new Point(386, 174);
+            atualizar.Location = new Point(358, 12);
             atualizar.Name = "atualizar";
-            atualizar.Size = new Size(112, 55);
+            atualizar.Size = new Size(110, 46);
             atualizar.TabIndex = 2;
             atualizar.Text = "Atualizar Tabela";
             atualizar.UseVisualStyleBackColor = true;
@@ -90,19 +91,30 @@
             // 
             // removert
             // 
-            removert.Location = new Point(191, 128);
+            removert.Location = new Point(126, 12);
             removert.Name = "removert";
-            removert.Size = new Size(112, 55);
+            removert.Size = new Size(110, 46);
             removert.TabIndex = 3;
             removert.Text = "Remover Tarefas";
             removert.UseVisualStyleBackColor = true;
             removert.Click += removert_Click;
+            // 
+            // EditarT
+            // 
+            EditarT.Location = new Point(242, 12);
+            EditarT.Name = "EditarT";
+            EditarT.Size = new Size(110, 46);
+            EditarT.TabIndex = 4;
+            EditarT.Text = "Editar Tarefa";
+            EditarT.UseVisualStyleBackColor = true;
+            EditarT.Click += EditarT_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(EditarT);
             Controls.Add(removert);
             Controls.Add(atualizar);
             Controls.Add(Abrir);
@@ -124,5 +136,6 @@
         private DataGridViewTextBoxColumn Prazo;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
+        private Button EditarT;
     }
 }

@@ -18,7 +18,6 @@ namespace Gestor_de_tarefas
         private void Abrir_Click(object sender, EventArgs e)
         {
             var AdicionarT = new AdicionarT();
-            
             AdicionarT.LoadData(_tarefa1);
             AdicionarT.ShowDialog(this);
         }
@@ -35,7 +34,7 @@ namespace Gestor_de_tarefas
 
         private void removert_Click(object sender, EventArgs e)
         {
-            if(_tarefa1.Count == 0)
+            if (_tarefa1.Count == 0)
             {
                 MessageBox.Show("Não tens tarefas para remover");
             }
@@ -45,6 +44,13 @@ namespace Gestor_de_tarefas
                 RemoverLista.LoadData(_tarefa1);
                 RemoverLista.ShowDialog(this);
             }
+        }
+
+        private void EditarT_Click(object sender, EventArgs e)
+        {
+            var EditarT= new EditarT();
+            EditarT.LoadData(_tarefa1);
+            EditarT.ShowDialog(this);
         }
     }
 }

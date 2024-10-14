@@ -42,15 +42,15 @@ namespace Gestor_de_tarefas
             {
                 if (ttarefa.Ttarefa == titulot.Text)
                 {
-                    tarefaigual=true;
+                    tarefaigual = true;
                     break;
                 }
             }
-            if (tarefaigual == true) 
+            if (tarefaigual == true)
             {
                 MessageBox.Show("Tens um titulo ja com esse nome");
             }
-            if (comboBox1.SelectedIndex != -1 && tarefa.Text != "" && titulot.Text != "" && tarefaigual== false)
+            if (comboBox1.SelectedIndex != -1 && tarefa.Text != "" && titulot.Text != "" && tarefaigual == false)
             {
                 var novaTarefa = new Tarefa
                 {
@@ -82,9 +82,9 @@ namespace Gestor_de_tarefas
 
         private void AdicionarT_Load(object sender, EventArgs e)
         {
+            
             comboBox1.SelectedIndex = 0;
         }
-
 
     }
 }
