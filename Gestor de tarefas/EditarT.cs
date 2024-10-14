@@ -35,16 +35,21 @@ namespace Gestor_de_tarefas
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach(var tarefas in _EditarT)
+            foreach (var tarefas in _EditarT)
             {
                 if (comboBox1.Text == tarefas.Ttarefa)
                 {
-                   titulot.Text = tarefas.Tarefa1;
+                    titulot.Text = tarefas.Tarefa1;
                     dateTimePicker1.Value = Convert.ToDateTime(tarefas.Prazo);
                     comboBox2.Text = tarefas.Prioridade;
-                    tarefa.Text= tarefas.Tarefa1;
+                    tarefa.Text = tarefas.Tarefa1;
                 }
             }
+        }
+
+        private void editar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

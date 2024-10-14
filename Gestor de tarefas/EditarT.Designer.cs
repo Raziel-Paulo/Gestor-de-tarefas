@@ -42,6 +42,7 @@
             label2 = new Label();
             label1 = new Label();
             tarefa = new TextBox();
+            editar = new Button();
             ((System.ComponentModel.ISupportInitialize)listat).BeginInit();
             SuspendLayout();
             // 
@@ -77,7 +78,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 24);
+            comboBox1.Location = new Point(12, 32);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(163, 23);
             comboBox1.TabIndex = 2;
@@ -153,11 +154,22 @@
             tarefa.Size = new Size(212, 23);
             tarefa.TabIndex = 10;
             // 
+            // editar
+            // 
+            editar.Location = new Point(526, 243);
+            editar.Name = "editar";
+            editar.Size = new Size(110, 46);
+            editar.TabIndex = 18;
+            editar.Text = "Editar";
+            editar.UseVisualStyleBackColor = true;
+            editar.Click += editar_Click;
+            // 
             // EditarT
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(793, 301);
+            Controls.Add(editar);
             Controls.Add(titulot);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -192,5 +204,6 @@
         private Label label2;
         private Label label1;
         private TextBox tarefa;
+        private Button editar;
     }
 }
