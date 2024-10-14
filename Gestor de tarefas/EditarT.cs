@@ -63,7 +63,7 @@ namespace Gestor_de_tarefas
         {
             if(comboBox1.SelectedIndex == -1)
             {
-                MessageBox.Show("Não inseriste o que querias editar");
+                MessageBox.Show("Não selecionaste o que queres editar");
             }
             if (comboBox2.SelectedIndex == -1)
             {

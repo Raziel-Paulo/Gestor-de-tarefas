@@ -47,9 +47,16 @@ namespace Gestor_de_tarefas
 
         private void EditarT_Click(object sender, EventArgs e)
         {
-            var EditarT= new EditarT();
-            EditarT.LoadData(_tarefa1);
-            EditarT.ShowDialog(this);
+            if(_tarefa1.Count == 0)
+            {
+                MessageBox.Show("Não tens tarefas para Editar");
+            }
+            else
+            {
+                var EditarT = new EditarT();
+                EditarT.LoadData(_tarefa1);
+                EditarT.ShowDialog(this);
+            }
         }
     }
 }
