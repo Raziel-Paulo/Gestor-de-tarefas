@@ -14,12 +14,14 @@ namespace Gestor_de_tarefas
     public partial class EditarT : Form
     {
         /// <summary>
-        /// 
+        /// Lista de tarefas a serem editadas
+        /// Armazena temporariamente as tarefas existentes para permitir a edição
         /// </summary>
         List<Tarefa> _EditarT = new List<Tarefa>();
 
         /// <summary>
-        /// 
+        /// Carrega as tarefas existentes para a interface de edição
+        /// Esta lista é utilizada para exibir as tarefas disponíveis ao usuário para edição
         /// </summary>
         /// <param name="_tarefa1"></param>
         public void LoadData(List<Tarefa> _tarefa1)
@@ -33,7 +35,7 @@ namespace Gestor_de_tarefas
         }
 
         /// <summary>
-        /// 
+        /// Evento chamado ao carregar o formulário, que preenche o comboBox e a tabela com as tarefas disponíveis para edição
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -50,7 +52,8 @@ namespace Gestor_de_tarefas
         }
 
         /// <summary>
-        /// 
+        /// Evento chamado quando o índice selecionado do comboBox1 muda
+        /// Carrega os detalhes da tarefa selecionada nos campos de texto para edição
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -58,6 +61,8 @@ namespace Gestor_de_tarefas
         {
             foreach (var tarefas in _EditarT)
             {
+
+                // Preenche os campos de edição com os detalhes da tarefa selecionada
                 if (comboBox1.Text == tarefas.Ttarefa)
                 {
                     titulot.Text = tarefas.Tarefa1;
@@ -80,7 +85,8 @@ namespace Gestor_de_tarefas
         }
 
         /// <summary>
-        /// 
+        /// Evento chamado ao clicar no botão de editar.
+        /// Realiza a validação dos campos e atualiza a tarefa selecionada com as novas informações.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -123,10 +129,13 @@ namespace Gestor_de_tarefas
                 {
                     novaTarefa.Prioridade += " (Alta)";
                 }
+
+                // Remove a tarefa antiga da lista
                 if (comboBox1.SelectedIndex >= 0)
                 {
                     Tarefa numeroParaRemover = null;
                     bool encrontrado = false;
+
                     foreach (var numero in _EditarT)
                     {
                         if (comboBox1.Text == numero.Ttarefa)
@@ -142,6 +151,8 @@ namespace Gestor_de_tarefas
                     }
                 }
                 tarefaigual = false;
+
+                // Verifica se o título da nova tarefa já existe na lista
                 foreach (var ttarefa in _EditarT)
                 {
                     if (ttarefa.Ttarefa == titulot.Text)
@@ -150,6 +161,8 @@ namespace Gestor_de_tarefas
                         break;
                     }
                 }
+
+                // Se o título da tarefa não existir, adiciona a nova tarefa e fecha o formulário
                 if (tarefaigual == false)
                 {
                     _EditarT.Add(novaTarefa);

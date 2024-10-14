@@ -5,7 +5,8 @@ namespace Gestor_de_tarefas
     public partial class Form1 : Form
     {
         /// <summary>
-        /// 
+        /// Lista que armazena todas as tarefas criadas pelo usuário
+        /// Esta lista é usada para gerenciar e exibir as tarefas
         /// </summary>
         List<Tarefa> _tarefa1 = new List<Tarefa>();
         public Form1()
@@ -18,7 +19,8 @@ namespace Gestor_de_tarefas
         }
 
         /// <summary>
-        /// 
+        /// Abre a janela para adicionar uma nova tarefa
+        /// Esta ação permite que o usuário adicione um nova tarefa, especificando detalhes como título, prazo e prioridade
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -30,7 +32,8 @@ namespace Gestor_de_tarefas
         }
 
         /// <summary>
-        /// 
+        /// Atualiza a lista de tarefas visível na interface do usuário
+        /// Percorre todas as tarefas na lista e exibe suas propriedades na tabela 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -45,7 +48,8 @@ namespace Gestor_de_tarefas
         }
 
         /// <summary>
-        /// 
+        /// Abre a janela para remover uma tarefa existente
+        /// Se não houver tarefas na lista, exibe uma mensagem informando que não há tarefas para remover
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -64,7 +68,8 @@ namespace Gestor_de_tarefas
         }
 
         /// <summary>
-        /// 
+        /// Abre a janela para editar uma tarefa existente
+        /// Se não houver tarefas na lista, exibe uma mensagem informando que não há tarefas para editar
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

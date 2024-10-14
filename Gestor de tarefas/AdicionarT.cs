@@ -14,12 +14,13 @@ namespace Gestor_de_tarefas
     public partial class AdicionarT : Form
     {
         /// <summary>
-        /// 
+        /// Lista local para armazenar as tarefas temporariamente enquanto são adicionadas
+        /// Permite manipular as tarefas e confirmar a adição antes de atualizar a lista principal de tarefas
         /// </summary>
         List<Tarefa> _lista = new List<Tarefa>();
 
         /// <summary>
-        /// 
+        /// Carrega a lista existente de tarefas para esta instância, permitindo que novas tarefas sejam adicionadas
         /// </summary>
         /// <param name="_tarefa1"></param>
         public void LoadData(List<Tarefa> _tarefa1)
@@ -32,7 +33,8 @@ namespace Gestor_de_tarefas
         }
 
         /// <summary>
-        /// 
+        /// Adiciona uma nova tarefa à lista após validar os campos de entrada
+        /// Verifica se todas as informações necessárias foram preenchidas e se não há duplicação de título da tarefa antes de adicionar
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -65,12 +67,16 @@ namespace Gestor_de_tarefas
             }
             if (comboBox1.SelectedIndex != -1 && tarefa.Text != "" && titulot.Text != "" && tarefaigual == false)
             {
+
+                // Cria uma nova instância de tarefa
                 var novaTarefa = new Tarefa
                 {
                     Ttarefa = titulot.Text,
                     Prazo = Convert.ToDateTime(prazo.Text),
                     Tarefa1 = tarefa.Text,
                 };
+
+                // Adiciona o grau de prioridade baseado na seleção
                 if (comboBox1.SelectedIndex == 0)
                 {
                     novaTarefa.Prioridade += " (Baixa)";

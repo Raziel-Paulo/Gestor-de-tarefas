@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,12 +16,13 @@ namespace Gestor_de_tarefas
     public partial class RemoverLista : Form
     {
         /// <summary>
-        /// 
+        /// Lista de tarefas para serem exibidas na interface de remoção
+        /// Armazena temporariamente as tarefas existentes para possibilitar a remoção
         /// </summary>
         List<Tarefa> _listadoremover = new List<Tarefa>();
 
         /// <summary>
-        /// 
+        /// Carrega as tarefas existentes para que possam ser removidas pelo usuário
         /// </summary>
         /// <param name="_tarefa1"></param>
         public void LoadData(List<Tarefa> _tarefa1)
@@ -30,7 +32,7 @@ namespace Gestor_de_tarefas
         }
 
         /// <summary>
-        /// 
+        /// Atualiza e exibe a lista de tarefas na interface, permitindo ao usuário selecionar e remover tarefas específicas
         /// </summary>
         public void atualizarlista()
         {
@@ -49,7 +51,7 @@ namespace Gestor_de_tarefas
         }
 
         /// <summary>
-        /// 
+        /// Evento chamado ao carregar o formulário, que as tarefas disponíveis para remoção
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -59,7 +61,7 @@ namespace Gestor_de_tarefas
         }
 
         /// <summary>
-        /// 
+        /// Remove a tarefa selecionada da lista
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -98,7 +100,7 @@ namespace Gestor_de_tarefas
         }
 
         /// <summary>
-        /// 
+        /// Remove todas as tarefas da lista
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
