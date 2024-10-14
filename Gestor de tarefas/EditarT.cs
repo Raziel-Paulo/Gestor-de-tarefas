@@ -13,15 +13,30 @@ namespace Gestor_de_tarefas
 {
     public partial class EditarT : Form
     {
+        /// <summary>
+        /// 
+        /// </summary>
         List<Tarefa> _EditarT = new List<Tarefa>();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_tarefa1"></param>
         public void LoadData(List<Tarefa> _tarefa1)
         {
             _EditarT = _tarefa1;
         }
+
         public EditarT()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EditarT_Load(object sender, EventArgs e)
         {
             foreach (var mostrartarefa in _EditarT)
@@ -34,6 +49,11 @@ namespace Gestor_de_tarefas
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             foreach (var tarefas in _EditarT)
@@ -59,6 +79,11 @@ namespace Gestor_de_tarefas
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void editar_Click(object sender, EventArgs e)
         {
             if(comboBox1.SelectedIndex == -1)

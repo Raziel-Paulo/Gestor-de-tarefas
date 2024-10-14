@@ -14,12 +14,24 @@ namespace Gestor_de_tarefas
 {
     public partial class RemoverLista : Form
     {
+        /// <summary>
+        /// 
+        /// </summary>
         List<Tarefa> _listadoremover = new List<Tarefa>();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_tarefa1"></param>
         public void LoadData(List<Tarefa> _tarefa1)
         {
             _listadoremover = _tarefa1;
 
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public void atualizarlista()
         {
             foreach (var numerot in _listadoremover)
@@ -35,11 +47,22 @@ namespace Gestor_de_tarefas
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RemoverLista_Load(object sender, EventArgs e)
         {
             atualizarlista();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void removert_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex >= 0)
@@ -74,6 +97,11 @@ namespace Gestor_de_tarefas
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void removertudo_Click(object sender, EventArgs e)
         {
             _listadoremover.Clear();

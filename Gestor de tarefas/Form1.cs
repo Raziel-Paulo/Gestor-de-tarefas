@@ -4,7 +4,9 @@ namespace Gestor_de_tarefas
 {
     public partial class Form1 : Form
     {
-
+        /// <summary>
+        /// 
+        /// </summary>
         List<Tarefa> _tarefa1 = new List<Tarefa>();
         public Form1()
         {
@@ -14,6 +16,12 @@ namespace Gestor_de_tarefas
         {
 
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Abrir_Click(object sender, EventArgs e)
         {
             var AdicionarT = new AdicionarT();
@@ -21,6 +29,11 @@ namespace Gestor_de_tarefas
             AdicionarT.ShowDialog(this);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void atualizar_Click(object sender, EventArgs e)
         {
             this.listat.Rows.Clear();
@@ -31,6 +44,11 @@ namespace Gestor_de_tarefas
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void removert_Click(object sender, EventArgs e)
         {
             if (_tarefa1.Count == 0)
@@ -45,6 +63,11 @@ namespace Gestor_de_tarefas
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EditarT_Click(object sender, EventArgs e)
         {
             if(_tarefa1.Count == 0)

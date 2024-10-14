@@ -13,7 +13,15 @@ namespace Gestor_de_tarefas
 {
     public partial class AdicionarT : Form
     {
+        /// <summary>
+        /// 
+        /// </summary>
         List<Tarefa> _lista = new List<Tarefa>();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_tarefa1"></param>
         public void LoadData(List<Tarefa> _tarefa1)
         {
             _lista = _tarefa1;
@@ -23,6 +31,11 @@ namespace Gestor_de_tarefas
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddT_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == -1)

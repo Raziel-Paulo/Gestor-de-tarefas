@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Gestor_de_tarefas
 {
-
+        /// <summary>
+        /// 
+        /// </summary>
         public class Tarefa
         {
             public string Ttarefa {  get; set; }
