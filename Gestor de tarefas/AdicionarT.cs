@@ -74,6 +74,7 @@ namespace Gestor_de_tarefas
                     Ttarefa = titulot.Text,
                     Prazo = Convert.ToDateTime(prazo.Text),
                     Tarefa1 = tarefa.Text,
+                    Done = false,
                 };
 
                 // Adiciona o grau de prioridade baseado na seleção
@@ -101,9 +102,13 @@ namespace Gestor_de_tarefas
 
         private void AdicionarT_Load(object sender, EventArgs e)
         {
-            
+
             comboBox1.SelectedIndex = 0;
         }
 
+        private void titulot_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

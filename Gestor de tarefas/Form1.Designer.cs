@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             listat = new DataGridView();
+            Column4 = new DataGridViewCheckBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Prazo = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
@@ -42,32 +43,49 @@
             // 
             // listat
             // 
+            listat.AllowUserToAddRows = false;
+            listat.AllowUserToDeleteRows = false;
+            listat.AllowUserToOrderColumns = true;
             listat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            listat.Columns.AddRange(new DataGridViewColumn[] { Column3, Prazo, Column1, Column2 });
+            listat.Columns.AddRange(new DataGridViewColumn[] { Column4, Column3, Prazo, Column1, Column2 });
             listat.Location = new Point(10, 172);
             listat.Name = "listat";
-            listat.Size = new Size(444, 150);
+            listat.ReadOnly = true;
+            listat.Size = new Size(542, 150);
             listat.TabIndex = 0;
+            // 
+            // Column4
+            // 
+            Column4.DataPropertyName = "Done";
+            Column4.HeaderText = "Done";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            Column4.Resizable = DataGridViewTriState.True;
+            Column4.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // Column3
             // 
             Column3.HeaderText = "Titulo da Tarefa";
             Column3.Name = "Column3";
+            Column3.ReadOnly = true;
             // 
             // Prazo
             // 
             Prazo.HeaderText = "Prazo";
             Prazo.Name = "Prazo";
+            Prazo.ReadOnly = true;
             // 
             // Column1
             // 
             Column1.HeaderText = "Prioridade";
             Column1.Name = "Column1";
+            Column1.ReadOnly = true;
             // 
             // Column2
             // 
             Column2.HeaderText = "Tarefa";
             Column2.Name = "Column2";
+            Column2.ReadOnly = true;
             // 
             // Abrir
             // 
@@ -132,10 +150,11 @@
         private Button Abrir;
         private Button atualizar;
         private Button removert;
+        private Button EditarT;
+        private DataGridViewCheckBoxColumn Column4;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Prazo;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
-        private Button EditarT;
     }
 }

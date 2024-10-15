@@ -11,6 +11,7 @@ namespace Gestor_de_tarefas
         /// </summary>
         public class Tarefa
         {
+            public bool Done {  get; set; }
             public string Ttarefa {  get; set; }
             public DateTime Prazo { get; set; }
             public string Prioridade { get; set; }

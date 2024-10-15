@@ -43,10 +43,13 @@
             // 
             // listat
             // 
+            listat.AllowUserToAddRows = false;
+            listat.AllowUserToDeleteRows = false;
             listat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             listat.Columns.AddRange(new DataGridViewColumn[] { Column3, Prazo, Column1, Column2 });
             listat.Location = new Point(353, 3);
             listat.Name = "listat";
+            listat.ReadOnly = true;
             listat.Size = new Size(444, 178);
             listat.TabIndex = 1;
             // 
@@ -54,21 +57,25 @@
             // 
             Column3.HeaderText = "Titulo da Tarefa";
             Column3.Name = "Column3";
+            Column3.ReadOnly = true;
             // 
             // Prazo
             // 
             Prazo.HeaderText = "Prazo";
             Prazo.Name = "Prazo";
+            Prazo.ReadOnly = true;
             // 
             // Column1
             // 
             Column1.HeaderText = "Prioridade";
             Column1.Name = "Column1";
+            Column1.ReadOnly = true;
             // 
             // Column2
             // 
             Column2.HeaderText = "Tarefa";
             Column2.Name = "Column2";
+            Column2.ReadOnly = true;
             // 
             // label1
             // 

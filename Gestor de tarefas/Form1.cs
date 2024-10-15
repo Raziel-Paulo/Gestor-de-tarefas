@@ -43,7 +43,7 @@ namespace Gestor_de_tarefas
 
             foreach (var tarefa in _tarefa1)
             {
-                this.listat.Rows.Add(tarefa.Ttarefa, tarefa.Prazo, tarefa.Prioridade, tarefa.Tarefa1);
+                this.listat.Rows.Add(tarefa.Done, tarefa.Ttarefa, tarefa.Prazo, tarefa.Prioridade, tarefa.Tarefa1);
             }
         }
 
