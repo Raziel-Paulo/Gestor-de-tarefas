@@ -30,7 +30,6 @@
         {
             listat = new DataGridView();
             Abrir = new Button();
-            atualizar = new Button();
             removert = new Button();
             EditarT = new Button();
             Column4 = new DataGridViewCheckBoxColumn();
@@ -51,7 +50,7 @@
             listat.Location = new Point(10, 64);
             listat.Name = "listat";
             listat.ReadOnly = true;
-            listat.Size = new Size(542, 150);
+            listat.Size = new Size(643, 150);
             listat.TabIndex = 0;
             // 
             // Abrir
@@ -63,16 +62,6 @@
             Abrir.Text = "Add Tarefa";
             Abrir.UseVisualStyleBackColor = true;
             Abrir.Click += Abrir_Click;
-            // 
-            // atualizar
-            // 
-            atualizar.Location = new Point(358, 12);
-            atualizar.Name = "atualizar";
-            atualizar.Size = new Size(110, 46);
-            atualizar.TabIndex = 2;
-            atualizar.Text = "Atualizar Tabela";
-            atualizar.UseVisualStyleBackColor = true;
-            atualizar.Click += atualizar_Click;
             // 
             // removert
             // 
@@ -130,15 +119,15 @@
             Tarefa1.HeaderText = "Tarefa";
             Tarefa1.Name = "Tarefa1";
             Tarefa1.ReadOnly = true;
+            Tarefa1.Width = 200;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 277);
+            ClientSize = new Size(850, 267);
             Controls.Add(EditarT);
             Controls.Add(removert);
-            Controls.Add(atualizar);
             Controls.Add(Abrir);
             Controls.Add(listat);
             Name = "Form1";
@@ -152,7 +141,6 @@
 
         private DataGridView listat;
         private Button Abrir;
-        private Button atualizar;
         private Button removert;
         private Button EditarT;
         private DataGridViewCheckBoxColumn Column4;

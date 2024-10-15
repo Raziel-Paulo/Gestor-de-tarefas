@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Gestor_de_tarefas
 {
@@ -68,6 +69,8 @@ namespace Gestor_de_tarefas
                     titulot.Text = tarefas.Ttarefa;
                     dateTimePicker1.Value = Convert.ToDateTime(tarefas.Prazo);
                     tarefa.Text = tarefas.Tarefa1;
+
+                    // Define o índice do comboBox de prioridade com base no valor da prioridade da tarefa
                     if (tarefas.Prioridade == " (Baixa)")
                     {
                         comboBox2.SelectedIndex = 0;
@@ -80,6 +83,8 @@ namespace Gestor_de_tarefas
                     {
                         comboBox2.SelectedIndex = 2;
                     }
+
+                    // Define se a tarefa está marcada como "feita" ou "não feita" com base no valor booleano
                     if (tarefas.Done == true)
                     {
                         feito.SelectedIndex = 0;
@@ -100,6 +105,7 @@ namespace Gestor_de_tarefas
         /// <param name="e"></param>
         private void editar_Click(object sender, EventArgs e)
         {
+            // Verificações de validação para garantir que todos os campos necessários foram preenchidos
             if (comboBox1.SelectedIndex == -1)
             {
                 MessageBox.Show("Não selecionaste o que queres editar");
@@ -120,15 +126,22 @@ namespace Gestor_de_tarefas
             {
                 MessageBox.Show("Falta preencher o que é a titulo da tarefa");
             }
+
+            // Variável que verifica se já existe uma tarefa com o mesmo título
             bool tarefaigual = false;
+
+            // Só prossegue com a edição se todas as condições de validação forem atendidas
             if (comboBox2.SelectedIndex != -1 && tarefa.Text != "" && titulot.Text != "" && comboBox1.SelectedIndex != -1 && feito.SelectedIndex != -1)
             {
+                // Cria uma nova instância de Tarefa com os dados fornecidos
                 var novaTarefa = new Tarefa
                 {
                     Ttarefa = titulot.Text,
                     Prazo = Convert.ToDateTime(dateTimePicker1.Text),
                     Tarefa1 = tarefa.Text,
                 };
+
+                // Define a prioridade com base na seleção feita no comboBox2
                 if (comboBox2.SelectedIndex == 0)
                 {
                     novaTarefa.Prioridade += " (Baixa)";
@@ -141,6 +154,8 @@ namespace Gestor_de_tarefas
                 {
                     novaTarefa.Prioridade += " (Alta)";
                 }
+
+                // Define se a tarefa está marcada como "feita" ou "não feita" com base na seleção do usuário
                 if (feito.SelectedIndex == 0)
                 {
                     novaTarefa.Done = true;

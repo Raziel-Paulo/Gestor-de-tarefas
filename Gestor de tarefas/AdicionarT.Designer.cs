@@ -129,7 +129,6 @@
             titulot.Name = "titulot";
             titulot.Size = new Size(212, 23);
             titulot.TabIndex = 9;
-            titulot.TextChanged += titulot_TextChanged;
             // 
             // AdicionarT
             // 

@@ -40,6 +40,8 @@ namespace Gestor_de_tarefas
         /// <param name="e"></param>
         private void AddT_Click(object sender, EventArgs e)
         {
+
+            // Verificações de validação para garantir que todos os campos necessários foram preenchidos
             if (comboBox1.SelectedIndex == -1)
             {
                 MessageBox.Show("Falta preencher o grau da prioridade");
@@ -52,7 +54,10 @@ namespace Gestor_de_tarefas
             {
                 MessageBox.Show("Falta preencher o que é a titulo da tarefa");
             }
+
+            // Variável que verifica se já existe uma tarefa com o mesmo título
             bool tarefaigual = false;
+
             foreach (var ttarefa in _lista)
             {
                 if (ttarefa.Ttarefa == titulot.Text)
@@ -65,6 +70,8 @@ namespace Gestor_de_tarefas
             {
                 MessageBox.Show("Tens um titulo ja com esse nome");
             }
+
+            // Só prossegue com a edição se todas as condições de validação forem atendidas
             if (comboBox1.SelectedIndex != -1 && tarefa.Text != "" && titulot.Text != "" && tarefaigual == false)
             {
 
@@ -104,11 +111,6 @@ namespace Gestor_de_tarefas
         {
 
             comboBox1.SelectedIndex = 0;
-        }
-
-        private void titulot_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

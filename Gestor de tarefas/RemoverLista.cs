@@ -119,10 +119,5 @@ namespace Gestor_de_tarefas
         {
             Close();
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

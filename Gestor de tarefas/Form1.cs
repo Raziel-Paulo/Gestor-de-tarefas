@@ -37,22 +37,6 @@ namespace Gestor_de_tarefas
         }
 
         /// <summary>
-        /// Atualiza a lista de tarefas visível na interface do usuário
-        /// Percorre todas as tarefas na lista e exibe suas propriedades na tabela 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void atualizar_Click(object sender, EventArgs e)
-        {
-            this.listat.Rows.Clear();
-
-            foreach (var tarefa in _tarefa1)
-            {
-                this.listat.Rows.Add(tarefa.Done, tarefa.Ttarefa, tarefa.Prazo, tarefa.Prioridade, tarefa.Tarefa1);
-            }
-        }
-
-        /// <summary>
         /// Abre a janela para remover uma tarefa existente
         /// Se não houver tarefas na lista, exibe uma mensagem informando que não há tarefas para remover
         /// </summary>
