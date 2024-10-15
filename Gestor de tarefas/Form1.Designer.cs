@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             listat = new DataGridView();
+            Abrir = new Button();
+            atualizar = new Button();
+            removert = new Button();
+            EditarT = new Button();
             Column4 = new DataGridViewCheckBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Prazo = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
-            Abrir = new Button();
-            atualizar = new Button();
-            removert = new Button();
-            EditarT = new Button();
             ((System.ComponentModel.ISupportInitialize)listat).BeginInit();
             SuspendLayout();
             // 
@@ -48,44 +48,11 @@
             listat.AllowUserToOrderColumns = true;
             listat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             listat.Columns.AddRange(new DataGridViewColumn[] { Column4, Column3, Prazo, Column1, Column2 });
-            listat.Location = new Point(10, 172);
+            listat.Location = new Point(10, 64);
             listat.Name = "listat";
             listat.ReadOnly = true;
             listat.Size = new Size(542, 150);
             listat.TabIndex = 0;
-            // 
-            // Column4
-            // 
-            Column4.DataPropertyName = "Done";
-            Column4.HeaderText = "Done";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Resizable = DataGridViewTriState.True;
-            Column4.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Titulo da Tarefa";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Prazo
-            // 
-            Prazo.HeaderText = "Prazo";
-            Prazo.Name = "Prazo";
-            Prazo.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Prioridade";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Tarefa";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
             // 
             // Abrir
             // 
@@ -127,11 +94,44 @@
             EditarT.UseVisualStyleBackColor = true;
             EditarT.Click += EditarT_Click;
             // 
+            // Column4
+            // 
+            Column4.DataPropertyName = "Done";
+            Column4.HeaderText = "Feito";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            Column4.Resizable = DataGridViewTriState.True;
+            Column4.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Titulo da Tarefa";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Prazo
+            // 
+            Prazo.HeaderText = "Prazo";
+            Prazo.Name = "Prazo";
+            Prazo.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Prioridade";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Tarefa";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 277);
             Controls.Add(EditarT);
             Controls.Add(removert);
             Controls.Add(atualizar);

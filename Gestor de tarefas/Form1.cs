@@ -75,7 +75,7 @@ namespace Gestor_de_tarefas
         /// <param name="e"></param>
         private void EditarT_Click(object sender, EventArgs e)
         {
-            if(_tarefa1.Count == 0)
+            if (_tarefa1.Count == 0)
             {
                 MessageBox.Show("Não tens tarefas para Editar");
             }

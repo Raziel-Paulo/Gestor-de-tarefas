@@ -47,7 +47,7 @@ namespace Gestor_de_tarefas
             }
             foreach (var tarefa in _EditarT)
             {
-                this.listat.Rows.Add(tarefa.Ttarefa, tarefa.Prazo, tarefa.Prioridade, tarefa.Tarefa1);
+                this.listat.Rows.Add(tarefa.Done, tarefa.Ttarefa, tarefa.Prazo, tarefa.Prioridade, tarefa.Tarefa1);
             }
         }
 
@@ -80,6 +80,14 @@ namespace Gestor_de_tarefas
                     {
                         comboBox2.SelectedIndex = 2;
                     }
+                    if (tarefas.Done == true)
+                    {
+                        feito.SelectedIndex = 0;
+                    }
+                    else if (tarefas.Done == false)
+                    {
+                        feito.SelectedIndex = 1;
+                    }
                 }
             }
         }
@@ -92,13 +100,17 @@ namespace Gestor_de_tarefas
         /// <param name="e"></param>
         private void editar_Click(object sender, EventArgs e)
         {
-            if(comboBox1.SelectedIndex == -1)
+            if (comboBox1.SelectedIndex == -1)
             {
                 MessageBox.Show("Não selecionaste o que queres editar");
             }
             if (comboBox2.SelectedIndex == -1)
             {
                 MessageBox.Show("Falta preencher o grau da prioridade");
+            }
+            if (feito.SelectedIndex == -1)
+            {
+                MessageBox.Show("Falta preencher se já esta feito ou não");
             }
             if (tarefa.Text == "")
             {
@@ -109,7 +121,7 @@ namespace Gestor_de_tarefas
                 MessageBox.Show("Falta preencher o que é a titulo da tarefa");
             }
             bool tarefaigual = false;
-            if (comboBox2.SelectedIndex != -1 && tarefa.Text != "" && titulot.Text != "" && comboBox1.SelectedIndex != -1)
+            if (comboBox2.SelectedIndex != -1 && tarefa.Text != "" && titulot.Text != "" && comboBox1.SelectedIndex != -1 && feito.SelectedIndex != -1)
             {
                 var novaTarefa = new Tarefa
                 {
@@ -128,6 +140,14 @@ namespace Gestor_de_tarefas
                 else if (comboBox2.SelectedIndex == 2)
                 {
                     novaTarefa.Prioridade += " (Alta)";
+                }
+                if (feito.SelectedIndex == 0)
+                {
+                    novaTarefa.Done = true;
+                }
+                else if (feito.SelectedIndex == 1)
+                {
+                    novaTarefa.Done = false;
                 }
 
                 // Remove a tarefa antiga da lista
