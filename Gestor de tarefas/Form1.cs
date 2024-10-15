@@ -11,7 +11,9 @@ namespace Gestor_de_tarefas
         List<Tarefa> _tarefa1 = new List<Tarefa>();
         public Form1()
         {
+
             InitializeComponent();
+            listat.AutoGenerateColumns = false;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -67,6 +69,9 @@ namespace Gestor_de_tarefas
                 var RemoverLista = new RemoverLista();
                 RemoverLista.LoadData(_tarefa1);
                 RemoverLista.ShowDialog(this);
+                listat.DataSource = null;
+                listat.DataSource = _tarefa1;
+                listat.Refresh();
             }
         }
 
@@ -87,6 +92,9 @@ namespace Gestor_de_tarefas
                 var EditarT = new EditarT();
                 EditarT.LoadData(_tarefa1);
                 EditarT.ShowDialog(this);
+                listat.DataSource = null;
+                listat.DataSource = _tarefa1;
+                listat.Refresh();
             }
         }
     }
