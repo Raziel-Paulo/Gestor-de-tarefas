@@ -29,6 +29,9 @@ namespace Gestor_de_tarefas
             var AdicionarT = new AdicionarT();
             AdicionarT.LoadData(_tarefa1);
             AdicionarT.ShowDialog(this);
+            listat.DataSource = null;
+            listat.DataSource = _tarefa1;
+            listat.Refresh();
         }
 
         /// <summary>

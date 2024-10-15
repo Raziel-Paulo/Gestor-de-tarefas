@@ -30,7 +30,6 @@ namespace Gestor_de_tarefas
             _listadoremover = _tarefa1;
 
         }
-
         /// <summary>
         /// Atualiza e exibe a lista de tarefas na interface, permitindo ao usuário selecionar e remover tarefas específicas
         /// </summary>

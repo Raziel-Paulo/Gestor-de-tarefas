@@ -34,10 +34,10 @@
             removert = new Button();
             EditarT = new Button();
             Column4 = new DataGridViewCheckBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
+            Ttarefa = new DataGridViewTextBoxColumn();
             Prazo = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
+            Prioridade = new DataGridViewTextBoxColumn();
+            Tarefa1 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)listat).BeginInit();
             SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             listat.AllowUserToDeleteRows = false;
             listat.AllowUserToOrderColumns = true;
             listat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            listat.Columns.AddRange(new DataGridViewColumn[] { Column4, Column3, Prazo, Column1, Column2 });
+            listat.Columns.AddRange(new DataGridViewColumn[] { Column4, Ttarefa, Prazo, Prioridade, Tarefa1 });
             listat.Location = new Point(10, 64);
             listat.Name = "listat";
             listat.ReadOnly = true;
@@ -103,29 +103,33 @@
             Column4.Resizable = DataGridViewTriState.True;
             Column4.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
-            // Column3
+            // Ttarefa
             // 
-            Column3.HeaderText = "Titulo da Tarefa";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
+            Ttarefa.DataPropertyName = "Ttarefa";
+            Ttarefa.HeaderText = "Titulo da Tarefa";
+            Ttarefa.Name = "Ttarefa";
+            Ttarefa.ReadOnly = true;
             // 
             // Prazo
             // 
+            Prazo.DataPropertyName = "Prazo";
             Prazo.HeaderText = "Prazo";
             Prazo.Name = "Prazo";
             Prazo.ReadOnly = true;
             // 
-            // Column1
+            // Prioridade
             // 
-            Column1.HeaderText = "Prioridade";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
+            Prioridade.DataPropertyName = "Prioridade";
+            Prioridade.HeaderText = "Prioridade";
+            Prioridade.Name = "Prioridade";
+            Prioridade.ReadOnly = true;
             // 
-            // Column2
+            // Tarefa1
             // 
-            Column2.HeaderText = "Tarefa";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
+            Tarefa1.DataPropertyName = "Tarefa1";
+            Tarefa1.HeaderText = "Tarefa";
+            Tarefa1.Name = "Tarefa1";
+            Tarefa1.ReadOnly = true;
             // 
             // Form1
             // 
@@ -152,9 +156,9 @@
         private Button removert;
         private Button EditarT;
         private DataGridViewCheckBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Ttarefa;
         private DataGridViewTextBoxColumn Prazo;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Prioridade;
+        private DataGridViewTextBoxColumn Tarefa1;
     }
 }
