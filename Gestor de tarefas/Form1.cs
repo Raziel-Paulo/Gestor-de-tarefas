@@ -193,7 +193,7 @@ namespace Gestor_de_tarefas
         {
             if (_tarefa1.Count == 0)
             {
-                MessageBox.Show("Não tens tarefas oara filtrar");
+                MessageBox.Show("Não tens tarefas para filtrar");
             }
             else
             {
