@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             listat = new DataGridView();
+            Column4 = new DataGridViewCheckBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Prazo = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
             comboBox1 = new ComboBox();
             titulot = new TextBox();
             label4 = new Label();
@@ -43,11 +48,6 @@
             label5 = new Label();
             label6 = new Label();
             feito = new ComboBox();
-            Column4 = new DataGridViewCheckBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Prazo = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)listat).BeginInit();
             SuspendLayout();
             // 
@@ -62,6 +62,38 @@
             listat.ReadOnly = true;
             listat.Size = new Size(525, 254);
             listat.TabIndex = 1;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Feito";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            Column4.Resizable = DataGridViewTriState.True;
+            Column4.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Titulo da Tarefa";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Prazo
+            // 
+            Prazo.HeaderText = "Prazo";
+            Prazo.Name = "Prazo";
+            Prazo.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Prioridade";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Tarefa";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
             // 
             // comboBox1
             // 
@@ -109,7 +141,7 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Baixo", "Médio", "Alto" });
+            comboBox2.Items.AddRange(new object[] { "Baixa", "Média", "Alta" });
             comboBox2.Location = new Point(12, 205);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(121, 23);
@@ -191,38 +223,6 @@
             feito.Size = new Size(121, 23);
             feito.TabIndex = 22;
             // 
-            // Column4
-            // 
-            Column4.HeaderText = "Feito";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Resizable = DataGridViewTriState.True;
-            Column4.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Titulo da Tarefa";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Prazo
-            // 
-            Prazo.HeaderText = "Prazo";
-            Prazo.Name = "Prazo";
-            Prazo.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Prioridade";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Tarefa";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
             // EditarT
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -244,7 +244,7 @@
             Controls.Add(comboBox1);
             Controls.Add(listat);
             Name = "EditarT";
-            Text = "EditarT";
+            Text = "Editar Tarefas";
             Load += EditarT_Load;
             ((System.ComponentModel.ISupportInitialize)listat).EndInit();
             ResumeLayout(false);

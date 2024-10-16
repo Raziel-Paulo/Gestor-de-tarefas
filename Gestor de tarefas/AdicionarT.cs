@@ -87,15 +87,15 @@ namespace Gestor_de_tarefas
                 // Adiciona o grau de prioridade baseado na seleção
                 if (comboBox1.SelectedIndex == 0)
                 {
-                    novaTarefa.Prioridade += " (Baixa)";
+                    novaTarefa.Prioridade += "Baixa";
                 }
                 else if (comboBox1.SelectedIndex == 1)
                 {
-                    novaTarefa.Prioridade += " (Média)";
+                    novaTarefa.Prioridade += "Média";
                 }
                 else if (comboBox1.SelectedIndex == 2)
                 {
-                    novaTarefa.Prioridade += " (Alta)";
+                    novaTarefa.Prioridade += "Alta";
                 }
                 _lista.Add(novaTarefa);
                 Close();

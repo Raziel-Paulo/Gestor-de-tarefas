@@ -71,15 +71,15 @@ namespace Gestor_de_tarefas
                     tarefa.Text = tarefas.Tarefa1;
 
                     // Define o índice do comboBox de prioridade com base no valor da prioridade da tarefa
-                    if (tarefas.Prioridade == " (Baixa)")
+                    if (tarefas.Prioridade == "Baixa")
                     {
                         comboBox2.SelectedIndex = 0;
                     }
-                    else if (tarefas.Prioridade == " (Média)")
+                    else if (tarefas.Prioridade == "Média")
                     {
                         comboBox2.SelectedIndex = 1;
                     }
-                    else if (tarefas.Prioridade == " (Alta)")
+                    else if (tarefas.Prioridade == "Alta")
                     {
                         comboBox2.SelectedIndex = 2;
                     }
@@ -144,15 +144,15 @@ namespace Gestor_de_tarefas
                 // Define a prioridade com base na seleção feita no comboBox2
                 if (comboBox2.SelectedIndex == 0)
                 {
-                    novaTarefa.Prioridade += " (Baixa)";
+                    novaTarefa.Prioridade += "Baixa";
                 }
                 else if (comboBox2.SelectedIndex == 1)
                 {
-                    novaTarefa.Prioridade += " (Média)";
+                    novaTarefa.Prioridade += "Média";
                 }
                 else if (comboBox2.SelectedIndex == 2)
                 {
-                    novaTarefa.Prioridade += " (Alta)";
+                    novaTarefa.Prioridade += "Alta";
                 }
 
                 // Define se a tarefa está marcada como "feita" ou "não feita" com base na seleção do usuário
