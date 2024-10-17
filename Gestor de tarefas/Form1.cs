@@ -1,5 +1,6 @@
 using static Gestor_de_tarefas.Tarefa;
-
+using System.Xml.Serialization; // Para trabalhar com XML
+using System.IO; // Para manipulação de arquivos
 namespace Gestor_de_tarefas
 {
     public partial class Form1 : Form
@@ -9,11 +10,14 @@ namespace Gestor_de_tarefas
         /// Esta lista é usada para gerenciar e exibir as tarefas
         /// </summary>
         List<Tarefa> _tarefa1 = new List<Tarefa>();
+        private const string FilePath = "tarefas.xml"; // Caminho do arquivo XML
+
         public Form1()
         {
 
             InitializeComponent();
             listat.AutoGenerateColumns = false;
+            LoadTasks(); // Carregar tarefas ao iniciar o formulário
         }
 
         /// <summary>
@@ -50,6 +54,7 @@ namespace Gestor_de_tarefas
             listat.DataSource = null;
             listat.DataSource = _tarefa1;
             listat.Refresh();
+            SaveTasks(); // Salvar tarefas após adição
         }
 
         /// <summary>
@@ -72,6 +77,7 @@ namespace Gestor_de_tarefas
                 listat.DataSource = null;
                 listat.DataSource = _tarefa1;
                 listat.Refresh();
+                SaveTasks(); // Salvar tarefas após adição
             }
         }
 
@@ -95,6 +101,7 @@ namespace Gestor_de_tarefas
                 listat.DataSource = null;
                 listat.DataSource = _tarefa1;
                 listat.Refresh();
+                SaveTasks(); // Salvar tarefas após adição
             }
         }
 
@@ -209,6 +216,50 @@ namespace Gestor_de_tarefas
                 RemoverFiltro.Show();
                 RemoverFiltro.Enabled = true;
             }
+        }
+
+        /// <summary>
+        /// Salva a lista de tarefas em um arquivo XML.
+        /// </summary>
+        private void SaveTasks()
+        {
+            // Cria uma instância do XmlSerializer para serializar uma lista do tipo Tarefa em XML.
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Tarefa>));
+
+            // Abre um stream de escrita para o arquivo especificado por FilePath
+            using (TextWriter writer = new StreamWriter(FilePath))
+            {
+                // Usa o serializer para converter a lista de tarefas (_tarefa1) em XML e gravar no arquivo
+                serializer.Serialize(writer, _tarefa1);
+            }
+        }
+
+        /// <summary>
+        /// Carrega a lista de tarefas a partir de um arquivo XML.
+        /// </summary>
+        private void LoadTasks()
+        {
+            // Verifica se o arquivo especificado por FilePath existe
+            if (File.Exists(FilePath))
+            {
+                // Cria uma instância do XmlSerializer para desserializar uma lista do tipo Tarefa a partir de XML
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Tarefa>));
+
+                // Abre um stream de leitura para o arquivo especificado por FilePath
+                using (TextReader reader = new StreamReader(FilePath))
+                {
+                    // Usa o serializer para converter o XML de volta para uma lista de tarefas e armazena em _tarefa1
+                    _tarefa1 = (List<Tarefa>)serializer.Deserialize(reader);
+
+                    // Define a lista de tarefas para ser exibida no DataGridView 'listat'
+                    listat.DataSource = _tarefa1;
+                }
+            }
+        }
+
+        private void Fechar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

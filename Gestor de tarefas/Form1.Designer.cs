@@ -46,6 +46,7 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             HabilidatarFiltro = new Button();
             RemoverFiltro = new Button();
+            Fechar = new Button();
             ((System.ComponentModel.ISupportInitialize)listat).BeginInit();
             SuspendLayout();
             // 
@@ -201,11 +202,22 @@
             RemoverFiltro.UseVisualStyleBackColor = true;
             RemoverFiltro.Click += RemoverFiltro_Click;
             // 
+            // Fechar
+            // 
+            Fechar.Location = new Point(794, 307);
+            Fechar.Name = "Fechar";
+            Fechar.Size = new Size(67, 26);
+            Fechar.TabIndex = 18;
+            Fechar.Text = "Fechar";
+            Fechar.UseVisualStyleBackColor = true;
+            Fechar.Click += Fechar_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(867, 340);
+            Controls.Add(Fechar);
             Controls.Add(RemoverFiltro);
             Controls.Add(HabilidatarFiltro);
             Controls.Add(comboBox2);
@@ -246,5 +258,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Button HabilidatarFiltro;
         private Button RemoverFiltro;
+        private Button Fechar;
     }
 }
