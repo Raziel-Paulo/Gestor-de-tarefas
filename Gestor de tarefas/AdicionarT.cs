@@ -98,6 +98,18 @@ namespace Gestor_de_tarefas
                     novaTarefa.Prioridade += "Alta";
                 }
                 _lista.Add(novaTarefa);
+
+                // Indica se o prazo da tarefa ja expirou ou se não expirou indica quando dias falta para acabar o prazo
+                if(Convert.ToDateTime(prazo.Text).Date <= Convert.ToDateTime(DateTime.Now.Date))
+                {
+                    MessageBox.Show("AVISO!!" +
+                        "Estas a por uma data que ja expirou");
+                }
+                else if(Convert.ToDateTime(prazo.Text).Date > Convert.ToDateTime(DateTime.Now.Date))
+                {
+                   var diasquefalta= (prazo.Value.Date  -DateTime.Now.Date).Days;
+                    MessageBox.Show("Falta " + diasquefalta + " dias para o prazo da sua tarefa");
+                }
                 Close();
             }
         }
